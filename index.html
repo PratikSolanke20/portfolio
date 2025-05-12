@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Freelance services by Pratik Solanke - Web Development, Automation, Design, and Data Solutions">
+    <meta name="keywords" content="Freelancer, Pratik Solanke, Web Development, Automation, Web Scraping, Logo Design, Video Editing, SRT Conversion, Data Transcription">
+    <meta name="author" content="Pratik Solanke">
+    <title>Pratik Solanke | Freelance Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+
+      body.light .services,
+body.light .about,
+body.light .contact,
+body.light #services,
+body.light #testimonials {
+  background-color: var(--light-card);
+  color: var(--text-dark);
+}
+
+body.light .card,
+body.light .testimonial-card {
+  background-color: #f3f3f3;
+  color: #111;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+
+.service-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: #222;
+      padding: 20px;
+      width: 260px;
+      border-radius: 8px;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      background: #333;
+    }
+
+    .counter-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .counter {
+      font-size: 2rem;
+      color: #ff9800;
+    }
+
+
+        :root {
+            --dark-bg: #0a0a0a;
+            --dark-card: #121212;
+            --light-bg: #f9f9f9;
+            --light-card: #ffffff;
+            --primary: #317ff3;
+            --text-light: #eeeeee;
+            --text-dark: #111;
+            --ambient-glow: 0 0 20px rgba(49, 127, 243, 0.5);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            transition: background-color 0.3s, color 0.3s;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: var(--dark-card);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--ambient-glow);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+            transform: scale(1.05);
+        }
+
+        .toggle-theme {
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+
+        section {
+            padding: 3rem 2rem;
+            perspective: 1000px;
+        }
+
+        .services, .about, .contact {
+            background-color: var(--dark-card);
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 900px;
+            box-shadow: var(--ambient-glow);
+            transform: translateY(50px);
+            opacity: 0;
+            transition: transform 1s ease, opacity 1s ease;
+        }
+
+        .section-visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        h2 {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        h3 {
+            font-weight: 500;
+        }
+
+        .service-list li {
+            margin-bottom: 0.75rem;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .service-list li:hover {
+            transform: scale(1.03);
+            color: var(--primary);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: var(--dark-card);
+            color: var(--text-light);
+            box-shadow: var(--ambient-glow);
+        }
+
+        body.light {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+        }
+
+        body.light header,
+        body.light .services,
+        body.light .about,
+        body.light .contact,
+        body.light footer {
+            background-color: var(--light-card);
+            box-shadow: none;
+        }
+
+        body.light nav a,
+        body.light .toggle-theme {
+            color: var(--text-dark);
+        }
+
+        .cta {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease, transform 0.3s;
+        }
+
+        .cta:hover {
+            background-color: #255ecf;
+            transform: scale(1.05);
+        }
+
+        .background-3d {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(49, 127, 243, 0.1), transparent);
+            z-index: 0;
+            transition: background 0.3s ease;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #1ebe5d;
+        }
+
+        button, a, input, textarea {
+            transition: all 0.2s ease;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            box-shadow: 0 0 5px var(--primary);
+            border-color: var(--primary);
+        }
+
+        .cta:active {
+            transform: scale(0.97);
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="background-3d"></div>
+    <header>
+        <div class="logo">Pratik Solanke</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+            </ul>
+        </nav>
+        <div class="toggle-theme" onclick="toggleTheme()">
+            <i class="fas fa-moon"></i>
+        </div>
+    </header>
+
+    <section id="home">
+        <h1>Welcome to My Freelance Portfolio</h1>
+        <p>Hi, I’m Pratik Solanke – A passionate freelancer with over 2 years of experience in delivering professional web and design solutions.</p>
+        <a class="cta" href="#contact">Hire Me</a>
+    </section>
+
+    
+
+ <!-- Services Section -->
+ <section id="services" data-aos="fade-up">
+    <h2>Services i Provide </h2>
+    <div class="service-cards">
+      <div class="card" data-aos="zoom-in">Web Development</div>
+      <div class="card" data-aos="zoom-in">Web Automation (Selenium)</div>
+      <div class="card" data-aos="zoom-in">Web Scraping (Gutenberg, LinkedIn)</div>
+      <div class="card" data-aos="zoom-in">Google Forms </div>
+      <div class="card" data-aos="zoom-in">  Tally Forms</div>
+      <div class="card" data-aos="zoom-in">Logo </div>
+      <div class="card" data-aos="zoom-in">Thumbnail Design</div>
+      <div class="card" data-aos="zoom-in">Video Editing</div>
+      <div class="card" data-aos="zoom-in">SRT Conversion</div>
+      
+      <div class="card" data-aos="zoom-in">Data Transcribing</div>
+    </div>
+  </section>
+
+
+
+  
+ <!-- Stats Section -->
+ <section id="stats" data-aos="fade-up">
+    <h2>My Achievements</h2>
+    <div class="counter-container">
+      <div><span class="counter" data-count="10">10</span><p>Projects Completed</p></div>
+      <div><span class="counter" data-count="50">50</span><p>Happy Clients</p></div>
+      <div><span class="counter" data-count="2000">2000</span><p>Hours Worked</p></div>
+    </div>
+  </section>
+
+
+
+
+  <section id="services" class="services">
+        <h2>My Past Works</h2>
+        <ul class="service-list">
+            <li>Website Creation (HTML, CSS, JavaScript)</li>
+            <li>Web Automation (Selenium)</li>
+            <li>Web Scraping (e.g. Gutenberg Books)</li>
+            <li>Google Forms for International Clients</li>
+            <li>Feedback Forms on Tally</li>
+            <li>Logo Design for Brands</li>
+            <li>Video Editing for Creators</li>
+            <li>LinkedIn Job Leads Scraping</li>
+            <li>Thumbnail Design for Videos</li>
+            <li>Video to SRT Conversion</li>
+            <li>Data Transcribing</li>
+        </ul>
+        <a class="cta" href="https://drive.google.com/drive/folders/1goKcRv4BdAMuobmd1qoS9a7MTOwY0Jl6" target="_blank" style="margin-top: 2rem; display: inline-block;">View All Past Projects</a>
+    </section>
+
+    <section id="resume" class="about">
+        <h2>My CV</h2>
+        <p>You can view or download my professional CV using the link below:</p>
+        <a class="cta" href="https://drive.google.com/file/d/1uVG5UoQbk9FC9WjHS_FKhd1u2L9SLrBi/view?usp=drive_link" target="_blank">View My CV</a>
+    </section>
+
+    <section id="about" class="about">
+  <h2>About Me</h2>
+  <p>Welcome! I'm a multi-skilled freelance professional with a proven track record of delivering high-quality digital solutions to clients across the globe. Whether you're an entrepreneur, content creator, small business, or enterprise—I'm here to help you save time, grow your brand, and achieve your goals with precision and creativity.</p>
+
+  <h3>What I Do:</h3>
+  <ul class="service-list">
+    <li><strong>🔧 Website Creation:</strong> I design responsive and user-friendly websites using HTML, CSS, and JavaScript—perfect for portfolios, landing pages, and small business sites that need a strong online presence.</li>
+    <li><strong>🤖 Web Automation & Scraping:</strong> Need to collect or automate data online? I use Selenium and custom scripts to scrape websites (like Project Gutenberg Books) and automate repetitive web tasks—saving you hours of manual work.</li>
+    <li><strong>📝 Google & Tally Forms:</strong> I create customized Google Forms for international clients and feedback forms on Tally, tailored for surveys, registrations, and lead generation.</li>
+    <li><strong>🎨 Logo & Thumbnail Design:</strong> Your brand’s identity matters. I design clean, impactful logos for businesses and eye-catching thumbnails for video content that drive clicks and recognition.</li>
+    <li><strong>🎥 Video Services:</strong> I offer professional video editing for creators and influencers, along with video-to-SRT conversion services to make your content more accessible and engaging.</li>
+    <li><strong>💼 LinkedIn Job Leads Scraping:</strong> Looking to hire or job hunt smartly? I can scrape and structure job leads directly from LinkedIn based on your target role, industry, or location.</li>
+    <li><strong>📊 Data Transcription & Processing:</strong> Whether it's audio, video, or scanned documents—I provide accurate and efficient data transcription services for research, interviews, meetings, and more.</li>
+  </ul>
+
+  <h3>Why Work With Me?</h3>
+  <ul class="service-list">
+    <li>✅ Fast Turnaround & Clear Communication</li>
+    <li>✅ Attention to Detail & Data Accuracy</li>
+    <li>✅ Creative + Technical Skill Blend</li>
+    <li>✅ Affordable Rates for High-Quality Work</li>
+    <li>✅ 100% Client Satisfaction is My Priority</li>
+  </ul>
+
+  <p>Let’s collaborate and bring your ideas to life with smart, scalable digital solutions.</p>
+  <p>📩 Reach out today—I’d love to hear about your project!</p>
+</section>
+
+
+<!-- Testimonials Section -->
+<section id="testimonials" data-aos="fade-up">
+    <h2>Testimonials</h2>
+    <div class="service-cards">
+      <div class="card" data-aos="flip-left">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" style="width:60px;border-radius:50%;">
+        <p>“Pratik delivered above expectations. Fast and highly professional!”</p>
+        <strong>- John D.</strong>
+      </div>
+      <div class="card" data-aos="flip-left">
+        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Client" style="width:60px;border-radius:50%;">
+        <p>“His scraping and automation helped streamline our workflow greatly.”</p>
+        <strong>- Maria S.</strong>
+      </div>
+    </div>
+  </section>
+
+
+
+
+    <section id="contact" class="contact">
+  <h2>Contact Me</h2>
+  <p>If you have a project in mind or need freelance help, feel free to get in touch:</p>
+  <p><i class="fas fa-envelope"></i> Email: <a href="mailto:pratiksolanke20@gmail.com">pratiksolanke20@gmail.com</a></p>
+  <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/pratik-solanke-72591123b/" target="_blank">Connect with me</a></p>
+  <p><i class="fab fa-github"></i> GitHub: <a href="https://github.com/PratikSolanke20" target="_blank">github.com/PratikSolanke20</a></p>
+</section>
+
+    <footer>
+        <p>&copy; 2025 Pratik Solanke. All rights reserved.</p>
+    </footer>
+
+    <a href="https://wa.me/919405560764" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('light');
+            const icon = document.querySelector('.toggle-theme i');
+            icon.classList.toggle('fa-sun');
+            icon.classList.toggle('fa-moon');
+        }
+
+        const sections = document.querySelectorAll('.services, .about, .contact');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('section-visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => observer.observe(section));
+
+        document.addEventListener('mousemove', e => {
+            document.documentElement.style.setProperty('--x', `${e.clientX}px`);
+            document.documentElement.style.setProperty('--y', `${e.clientY}px`);
+        });
+    </script>
+</body>
+
+</html>
